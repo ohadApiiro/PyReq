@@ -1,5 +1,5 @@
 from aiohttp import web
-
+import requirements
 
 class ApiClass:
     def __init__(self, web):
@@ -13,4 +13,7 @@ class ApiClass:
 
 
 if __name__ == '__main__':
-    print('PyCharm')
+    filename = '/home/ohad/PycharmProjects/PyReq/dum.txt'
+    with open(filename, 'r') as fd:
+        for req in requirements.parse(fd):
+            print(req.name)
